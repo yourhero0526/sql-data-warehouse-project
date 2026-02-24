@@ -35,7 +35,7 @@ These insights empower stakeholders with key business metrics, enabling strategi
 
 For more details, refer to [docs/requirements.md](\).
 
-About the License:
+**About the License:**
 
 MIT License
 
@@ -53,6 +53,6 @@ copies or substantial portions of the Software.
 
 Feel free to copy this!
 
-About ME:
+**About ME:**
 
 Hi! I'm Enzo, a data engineer for a fintech company. Currently, I am learning how to create a data warehouse because our finance department wants to build an independent warehouse to house financial data and ultimately generate financial reports. 
