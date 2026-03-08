@@ -3,6 +3,11 @@ However, we added a native column called "dwh_create_date" for the engineers jus
 
 */
 
+/*
+===================================================================================
+1. CREATE DDL Table for silver.crm_cust_info A.K.A. CRM - Customer Information
+===================================================================================
+*/
 
 IF OBJECT_ID ('silver.crm_cust_info' , 'U') IS NOT NULL
 	DROP TABLE silver.crm_cust_info;
@@ -17,6 +22,12 @@ CREATE TABLE silver.crm_cust_info(
 	cst_create_date DATE,
 	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
+
+/*
+===================================================================================
+2. CREATE DDL Table for silver.crm_prod_info A.K.A. CRM - Product Information
+===================================================================================
+*/
 
 IF OBJECT_ID ('silver.crm_prd_info' , 'U') IS NOT NULL
 	DROP TABLE silver.crm_prd_info;
@@ -33,6 +44,12 @@ CREATE TABLE silver.crm_prd_info(
 	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 
+/*
+===================================================================================
+3. CREATE DDL Table for silver.crm_sales_details A.K.A. CRM - Sales Details
+===================================================================================
+*/
+
 IF OBJECT_ID ('silver.crm_sales_details' , 'U') IS NOT NULL
 	DROP TABLE silver.crm_sales_details;
 
@@ -40,14 +57,20 @@ CREATE TABLE silver.crm_sales_details(
 	sls_ord_num NVARCHAR(50),
 	sls_prd_key NVARCHAR(50),
 	sls_cust_id INT,
-	sls_order_dt INT,
-	sls_ship_dt INT,
-	sls_due_dt INT,
+	sls_order_dt DATE,
+	sls_ship_dt DATE,
+	sls_due_dt DATE,
 	sls_sales INT,
 	sls_quantity INT,
 	sls_price INT,
 	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
+
+/*
+===================================================================================
+4. CREATE DDL Table for silver.erp_cust_az12 A.K.A. ERP - Additional Customer Info (Birthdate)
+===================================================================================
+*/
 
 IF OBJECT_ID ('silver.erp_cust_az12' , 'U') IS NOT NULL
 	DROP TABLE silver.erp_cust_az12;
@@ -59,6 +82,12 @@ CREATE TABLE silver.erp_cust_az12(
 	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 
+/*
+===================================================================================
+5. CREATE DDL Table for silver.erp_loc_a101 A.K.A. ERP - Additional Customer Info (Country)
+===================================================================================
+*/
+
 IF OBJECT_ID ('silver.erp_loc_a101' , 'U') IS NOT NULL
 	DROP TABLE silver.erp_loc_a101;
 
@@ -67,6 +96,12 @@ CREATE TABLE silver.erp_loc_a101(
 	cntry NVARCHAR(50),
 	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
+
+/*
+===================================================================================
+6. CREATE DDL Table for silver.erp_px_cat_g1v2 A.K.A. ERP - Product Categories
+===================================================================================
+*/
 
 IF OBJECT_ID ('silver.erp_px_cat_g1v2' , 'U') IS NOT NULL
 	DROP TABLE silver.erp_px_cat_g1v2;
